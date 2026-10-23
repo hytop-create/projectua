@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Срібний вік — SMM-стратегія</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14213D;        /* синьо-чорний текст */
+  --ink-soft:#3B4A66;
+  --navy:#2C4A78;       /* фірмовий синій з логотипу */
+  --sky:#E8F0F9;
+  --sky-2:#D3E2F2;
+  --silver:#B9C3D0;
+  --cream:#F7F2EA;
+  --line:#E3E8EF;
+  --ok:#2F7A5B;
+  --warn:#B4532A;
+  --white:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Montserrat',sans-serif;font-weight:400;line-height:1.65;font-size:16px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{color:var(--ink);line-height:1.25;margin:0 0 .6em}
+h1{font-weight:700;font-size:44px;letter-spacing:-.5px}
+h2{font-weight:700;font-size:30px;margin-top:0}
+h3{font-weight:600;font-size:20px}
+h4{font-weight:600;font-size:16px;color:var(--navy)}
+p{margin:0 0 1em}
+b,strong{font-weight:600}
+a{color:var(--navy)}
+small{color:var(--ink-soft)}
+hr{border:none;border-top:1px solid var(--line);margin:40px 0}
+
+/* hero */
+.hero{padding:72px 0 48px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:600;margin-bottom:14px}
+.hero p.lead{font-size:19px;color:var(--ink-soft);max-width:760px;font-weight:300}
+.meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:24px;font-size:14px;color:var(--ink-soft)}
+
+/* nav */
+nav.toc{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10}
+nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+nav.toc a{white-space:nowrap;text-decoration:none;font-size:13px;font-weight:500;color:var(--ink-soft);padding:6px 12px;border-radius:20px}
+nav.toc a:hover{background:var(--sky);color:var(--navy)}
+
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+.num{display:inline-block;font-size:13px;font-weight:600;color:var(--navy);background:var(--sky);border-radius:20px;padding:3px 12px;margin-bottom:14px}
+.sub{color:var(--ink-soft);max-width:780px;font-size:17px;margin-bottom:32px}
+
+/* cards & grids */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}h1{font-size:32px}h2{font-size:25px}}
+.card{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff}
+.card.tint{background:var(--sky);border-color:var(--sky-2)}
+.card.cream{background:var(--cream);border-color:#EDE4D6}
+.card h3{margin-bottom:.4em}
+.stat{font-size:34px;font-weight:700;color:var(--navy);line-height:1.1}
+.stat-l{font-size:13px;color:var(--ink-soft)}
+.tag{display:inline-block;font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px;background:var(--sky);color:var(--navy);margin:0 6px 6px 0}
+.tag.red{background:#FBEDE6;color:var(--warn)}
+.tag.green{background:#E6F3EC;color:var(--ok)}
+ul,ol{padding-left:20px;margin:0 0 1em}
+li{margin-bottom:.35em}
+.callout{border-left:3px solid var(--navy);background:var(--sky);padding:18px 22px;border-radius:0 12px 12px 0;margin:24px 0}
+.callout.warn{border-color:var(--warn);background:#FDF4EF}
+.callout p:last-child{margin:0}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0 24px}
+.tbl th{text-align:left;font-weight:600;background:var(--sky);color:var(--ink);padding:12px 12px;border-bottom:1px solid var(--sky-2)}
+.tbl td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:hover td{background:#FAFCFE}
+.scroll{overflow-x:auto}
+
+/* competitor */
+.comp{border:1px solid var(--line);border-radius:16px;padding:26px;margin-bottom:20px}
+.comp-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:flex-start;margin-bottom:12px}
+.comp-head h3{margin:0}
+.kpis{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--ink-soft)}
+.kpis b{color:var(--ink);font-size:16px}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+@media(max-width:860px){.pros-cons{grid-template-columns:1fr}}
+.pc{border-radius:10px;padding:14px 16px;font-size:14px}
+.pc.p{background:#F1F8F4}.pc.c{background:#FDF4EF}
+.pc h4{margin-bottom:6px}.pc.p h4{color:var(--ok)}.pc.c h4{color:var(--warn)}
+
+/* bars */
+.bar{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:14px}
+.bar span.l{width:300px;flex-shrink:0}
+.bar .track{flex:1;height:10px;background:var(--sky);border-radius:6px;overflow:hidden}
+.bar .fill{height:100%;background:var(--navy);border-radius:6px}
+.bar span.v{width:70px;text-align:right;font-weight:600;color:var(--navy)}
+@media(max-width:860px){.bar span.l{width:140px;font-size:12px}}
+
+/* palette */
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:860px){.swatches{grid-template-columns:repeat(2,1fr)}}
+.sw{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.sw .c{height:90px}
+.sw .t{padding:10px 12px;font-size:13px}
+.sw .t b{display:block}
+
+/* phone mock */
+.mock-wrap{display:grid;grid-template-columns:360px 1fr;gap:32px;align-items:start}
+@media(max-width:860px){.mock-wrap{grid-template-columns:1fr}}
+.phone{width:340px;max-width:100%;border:10px solid #111;border-radius:36px;padding:16px 12px;background:#fff;margin:0 auto}
+.ph-top{display:flex;gap:14px;align-items:center;margin-bottom:10px}
+.ava{width:72px;height:72px;border-radius:50%;background:#fff;border:1px solid var(--line);overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:24px;font-family:Georgia,serif;font-style:italic}
+.ph-stats{display:flex;gap:12px;font-size:11px;text-align:center}
+.ph-stats b{display:block;font-size:14px}
+.ph-name{font-size:12px;font-weight:600}
+.ph-bio{font-size:11px;line-height:1.45;color:#222;margin:4px 0 10px}
+.ph-btn{display:flex;gap:6px;margin-bottom:12px}
+.ph-btn div{flex:1;font-size:11px;text-align:center;background:var(--navy);color:#fff;border-radius:7px;padding:6px 0;font-weight:500}
+.ph-btn div.g{background:#EFEFEF;color:#111}
+.hl{display:flex;gap:9px;overflow:hidden;margin-bottom:12px}
+.hl .h{text-align:center;font-size:9px;width:50px;flex-shrink:0}
+.hl .h i{display:flex;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--silver);background:var(--sky);align-items:center;justify-content:center;font-style:normal;font-size:18px;margin:0 auto 3px;color:var(--navy)}
+.feed{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.feed div{aspect-ratio:3/4;display:flex;align-items:flex-end;padding:6px;font-size:8.5px;font-weight:700;color:#fff;line-height:1.2;text-transform:uppercase}
+.f1{background:linear-gradient(180deg,#9DB4CF 0%,#2C4A78 100%)}
+.f2{background:linear-gradient(180deg,#F7F2EA 0%,#D9C9B1 100%);color:var(--ink)!important}
+.f3{background:linear-gradient(180deg,#C8D8E8 0%,#5D7A9E 100%)}
+.f4{background:linear-gradient(180deg,#E8F0F9 0%,#B9C3D0 100%);color:var(--ink)!important}
+.f5{background:linear-gradient(180deg,#7E93AE 0%,#14213D 100%)}
+.f6{background:linear-gradient(180deg,#EFE6D8 0%,#A99A86 100%)}
+
+/* rubric cards */
+.rub{border:1px solid var(--line);border-radius:14px;padding:22px;position:relative}
+.rub .freq{position:absolute;top:18px;right:18px;font-size:12px;font-weight:600;color:var(--navy);background:var(--sky);padding:3px 10px;border-radius:20px}
+.rub h3{padding-right:110px}
+.rub .ex{font-size:14px;color:var(--ink-soft)}
+
+/* timeline */
+.tl{border-left:2px solid var(--sky-2);padding-left:24px;margin-left:8px}
+.tl .st{position:relative;margin-bottom:28px}
+.tl .st:before{content:"";position:absolute;left:-32px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--navy);border:3px solid #fff;box-shadow:0 0 0 2px var(--navy)}
+
+/* week */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+@media(max-width:860px){.week{grid-template-columns:repeat(2,1fr)}}
+.day{border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px}
+.day b{display:block;color:var(--navy);margin-bottom:6px}
+.day .r{background:var(--sky);border-radius:6px;padding:4px 7px;margin-bottom:5px;font-size:12px}
+.day .s{background:var(--cream);border-radius:6px;padding:4px 7px;margin-bottom:5px;font-size:12px}
+
+footer{padding:48px 0 80px;font-size:13px;color:var(--ink-soft)}
+footer ol li{margin-bottom:6px}
+.q{font-style:italic;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Стратегія соцмереж · Instagram</div>
+    <h1>Пансіонат «Срібний вік»:<br>аналіз ніші, конкурентів і стратегія розвитку</h1>
+    <p class="lead">Мета — щоб «Срібний вік» став назвою, яка асоціюється з пансіонатом для літніх людей за замовчуванням, а Instagram приводив заявки від дорослих дітей 30–50 років, які вирішують, де житимуть їхні батьки.</p>
+    <div class="meta">
+      <span>Профіль: <b>@budynok_prestarilykh</b></span>
+      <span>Референс власників: <b>@sv_pansionat_almaty</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#summary">Головне</a>
+  <a href="#niche">Ніша</a>
+  <a href="#audit">Аудит сторінки</a>
+  <a href="#comp">Конкуренти</a>
+  <a href="#works">Що заходить</a>
+  <a href="#voice">Голос аудиторії</a>
+  <a href="#position">Позиціонування</a>
+  <a href="#visual">Візуал</a>
+  <a href="#rubrics">Рубрики</a>
+  <a href="#volume">Обсяги</a>
+  <a href="#stories">Сторіс</a>
+  <a href="#highlights">Хайлайтси</a>
+  <a href="#engage">Залучення</a>
+  <a href="#shoot">Зйомка</a>
+  <a href="#roadmap">План 90 днів</a>
+</div></nav>
+
+<!-- ============ SUMMARY ============ -->
+<section id="summary"><div class="wrap">
+  <span class="num">00</span>
+  <h2>Головне на одній сторінці</h2>
+  <div class="grid g4" style="margin-bottom:28px">
+    <div class="card tint"><div class="stat">28,4K</div><div class="stat-l">підписників у профілі — найбільша база серед українських пансіонатів, які ми знайшли</div></div>
+    <div class="card tint"><div class="stat">300–930</div><div class="stat-l">переглядів на рілс. Охоплення ≈ 1–3% від бази — аудиторія «мертва» або нецільова</div></div>
+    <div class="card tint"><div class="stat">9–48</div><div class="stat-l">лайків на публікацію. ER ≈ 0,03–0,17% (норма для ніші — 1–3%)</div></div>
+    <div class="card tint"><div class="stat">≈3/міс</div><div class="stat-l">публікацій у стрічці з червня по жовтень 2026. Хайлайтси — лише про народну медицину</div></div>
+  </div>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Що знайшли</h3>
+      <ul>
+        <li>В Україні ніша в Instagram <b>практично порожня</b>: найактивніші конкуренти мають 600–1 800 підписників і 200–900 переглядів на рілс. Хто першим системно вийде з якісним контентом — той і займе позицію «пансіонат №1 у голові».</li>
+        <li>Референс з Алмати показує, що <b>найкраще заходять не свята і дозвілля, а впізнавані ситуації дорослих дітей</b>: «у мами почалися галюцинації», «бабуся знову стала мамою», «помилки в догляді за людиною з деменцією» — 32–52 тис. переглядів проти 1,6–2,5 тис. на «свято в пансіонаті».</li>
+        <li>Головний бар'єр продажу — <b>провина і недовіра</b>: «здати батьків», страх насильства, «колють, щоб лежали спокійно». Контент має знімати саме ці страхи.</li>
+        <li>Поточні хайлайтси «Народне лікування», «Лік трави», «Організм» шкодять бренду медичного догляду і залучають не ту аудиторію.</li>
+      </ul>
+    </div>
+    <div class="card cream">
+      <h3>Що робимо</h3>
+      <ul>
+        <li><b>Позиціонування:</b> «Спокій для батьків — спокій для вас». Не «будинок престарілих», а місце, де батькам добре, а дітям не соромно і не страшно.</li>
+        <li><b>Формула контенту:</b> 40% — впізнавані ситуації і поради для дорослих дітей, 30% — прозорість (як усе влаштовано зсередини), 20% — живі історії мешканців і персоналу, 10% — прямий продаж.</li>
+        <li><b>Обсяг:</b> 4–5 рілс + 2 каруселі на тиждень, сторіс щодня (6–10 кадрів). Великий обсяг тут працює, але тільки якщо це документування реального життя, а не наповнення стрічки.</li>
+        <li><b>Візуал:</b> білий + фірмовий темно-синій + срібний + теплий кремовий. Тепла, «домашня» кольорокорекція, ніяких лікарняних зелено-блакитних відтінків.</li>
+        <li><b>Хайлайтси:</b> прибрати всі 6, зібрати 8 нових — від «Ціни» до «Як ми заселяємо».</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ NICHE ============ -->
+<section id="niche"><div class="wrap">
+  <span class="num">01</span>
+  <h2>Аналіз ніші</h2>
+  <p class="sub">Пансіонат — це покупка з високою ціною помилки, довгим циклом рішення і сильним емоційним опором. Людина не «хоче» пансіонат — вона приходить до нього, коли інших варіантів не лишається.</p>
+
+  <h3>Ринковий контекст України</h3>
+  <div class="grid g3" style="margin-bottom:28px">
+    <div class="card"><div class="stat">25%</div><div class="stat-l">прогнозна частка людей 60+ у населенні України на 2025 рік. Україна — у топ-30 найстаріших країн світу</div></div>
+    <div class="card"><div class="stat">5,7 млн</div><div class="stat-l">українців-біженців за кордоном (квітень 2026). Батьки багатьох лишились в Україні — і хтось має бути поруч з ними</div></div>
+    <div class="card"><div class="stat">≈90</div><div class="stat-l">державних геріатричних пансіонатів на всю країну, якість яких нерівна — приватний сектор закриває дефіцит</div></div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>Чому ніша зараз відкрита</h4>
+      <ul>
+        <li>Попит росте: населення старіє, працездатні діти виїхали або працюють, часто в іншому місті.</li>
+        <li>Війна додала нові потреби: укриття, генератори, тривожні протоколи, евакуація. Це прямі аргументи продажу.</li>
+        <li>Конкуренти в соцмережах слабкі: шаблонні рілси, банки фото, мала база, низька регулярність.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Чому ніша складна</h4>
+      <ul>
+        <li><b>Стигма:</b> «здати в будинок престарілих» досі звучить як зрада.</li>
+        <li><b>Недовіра до приватних закладів:</b> Омбудсман регулярно публікує звіти перевірок приватних пансіонатів (зокрема і мережі «Срібний вік»), після трагедії в Харкові в Києві масово перевіряли приватні заклади й відкривали кримінальні справи. Люди це пам'ятають.</li>
+        <li><b>Рішення приймають не ті, кому надається послуга:</b> платять і обирають діти, а живуть батьки.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:36px">Психологія покупця: хто і чому приходить</h3>
+  <p>Дослідження ринку США (Caring.com, 2 098 респондентів, які шукали догляд онлайн) — найближчі доступні дані про поведінку дорослих дітей у цій ніші:</p>
+  <div style="max-width:760px;margin:20px 0 28px">
+    <div class="bar"><span class="l">Тригер — медичний діагноз у батьків</span><div class="track"><div class="fill" style="width:58%"></div></div><span class="v">58%</span></div>
+    <div class="bar"><span class="l">Тригер — власне вигорання / потреби дитини</span><div class="track"><div class="fill" style="width:27%"></div></div><span class="v">27%</span></div>
+    <div class="bar"><span class="l">Тригер — самотність батьків</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="v">8%</span></div>
+    <div class="bar"><span class="l">Рішення приймали понад рік</span><div class="track"><div class="fill" style="width:17%"></div></div><span class="v">17%</span></div>
+    <div class="bar"><span class="l">Орієнтувались на онлайн-відгуки</span><div class="track"><div class="fill" style="width:21%"></div></div><span class="v">21%</span></div>
+  </div>
+  <div class="callout">
+    <p><b>Висновок для контенту:</b> людину «вмикає» діагноз (деменція, інсульт, перелом шийки стегна, Паркінсон) або її власне виснаження. Отже, контент має бути про ці ситуації — і бути поруч з людиною місяцями, поки вона дозріває. Самотність і «весело на дозвіллі» як головний аргумент не продають — вони лише підтверджують вибір.</p>
+  </div>
+
+  <h3>Портрет ЦА</h3>
+  <div class="grid g3">
+    <div class="card tint">
+      <h4>«Втомлена донька», 38–50</h4>
+      <p style="font-size:14px">Живе з мамою або поруч. Доглядає роками. Відчуває провину за думку про пансіонат. Шукає дозвіл «можна» і докази, що мамі буде добре.</p>
+      <span class="tag">вигорання</span><span class="tag">провина</span><span class="tag">деменція</span>
+    </div>
+    <div class="card tint">
+      <h4>«Дитина здалеку», 30–45</h4>
+      <p style="font-size:14px">За кордоном або в іншому місті. Батьки самі. Боїться дзвінка вночі. Хоче контроль: фото, відео, звіти, зв'язок з персоналом.</p>
+      <span class="tag">за кордоном</span><span class="tag">контроль</span><span class="tag">безпека</span>
+    </div>
+    <div class="card tint">
+      <h4>«Після лікарні», 35–55</h4>
+      <p style="font-size:14px">Батько після інсульту / перелому, виписка за кілька днів. Рішення потрібне терміново. Шукає реабілітацію, тимчасове проживання, медсестру 24/7.</p>
+      <span class="tag">терміново</span><span class="tag">реабілітація</span><span class="tag">лежачі</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ AUDIT ============ -->
+<section id="audit"><div class="wrap">
+  <span class="num">02</span>
+  <h2>Аудит поточної сторінки @budynok_prestarilykh</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Факти</h4>
+      <table class="tbl">
+        <tr><td>Ім'я профілю</td><td>«Срібний Вік» Будинок для літніх людей</td></tr>
+        <tr><td>Підписники / публікації</td><td>28,4K / 1 440</td></tr>
+        <tr><td>Локації в біо</td><td>Київ · Одеса · Вінниця · Чернівці + новий пансіонат у с. Проців (відкриття — 3 жовтня)</td></tr>
+        <tr><td>Регулярність</td><td>12 публікацій з 16 червня по 3 жовтня ≈ 3 на місяць, нерегулярно</td></tr>
+        <tr><td>Формат</td><td>Майже лише рілси, каруселей у свіжій стрічці немає</td></tr>
+        <tr><td>Перегляди рілс</td><td>303–926</td></tr>
+        <tr><td>Лайки / коментарі</td><td>9–48 / 0–5</td></tr>
+        <tr><td>Хайлайтси</td><td>Корисно 2 · Вправи · Народне лікування · Корисно · Організм · Лік трави</td></tr>
+        <tr><td>Пошук «будинок для літніх»</td><td>Профіль на 1-му місці в пошуку Instagram ✓</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="pc p" style="margin-bottom:14px">
+        <h4>Що вже добре</h4>
+        <ul>
+          <li>Сильний нікнейм для пошуку і велика база — фундамент, якого немає в жодного конкурента.</li>
+          <li>Є серія відповідей на питання з директором і лікарем: «Чи зможу я бачитися з близьким», «Яке харчування», «Як проходять свята», «На який термін можна залишити родича». Це правильний формат — його треба розвивати, а не кидати.</li>
+          <li>Є правильні теми: «Віддати батьків у пансіонат — егоїзм чи турбота?», стереотипи про пансіонати.</li>
+          <li>Лаконічний логотип-монограма, чистий синьо-білий фірмовий стиль.</li>
+        </ul>
+      </div>
+      <div class="pc c">
+        <h4>Що заважає продажам</h4>
+        <ul>
+          <li><b>Нецільова база.</b> Охоплення 1–3% від підписників означає, що більшість аудиторії набрана на поради про здоров'я і трави — це самі літні люди, а не їхні діти-покупці.</li>
+          <li><b>Хайлайтси не продають.</b> Немає цін, умов, локацій, відгуків, кімнат, персоналу, порядку заселення. Народна медицина у профілі закладу з медичним доглядом — ризик для репутації.</li>
+          <li><b>Немає системи.</b> Немає рубрик, впізнаваних обкладинок, регулярності.</li>
+          <li><b>Немає людей і облич:</b> мешканці показані, але без історій; персонал майже не представлений.</li>
+          <li><b>Слабкі заклики:</b> телефон у підписі, без конкретної дії «запишіться на екскурсію».</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="callout warn">
+    <p><b>Про нікнейм.</b> «budynok_prestarilykh» несе стигму, але дає перше місце в пошуку. Рекомендація — не міняти зараз. Бренд робимо через поле «Ім'я» (його Instagram теж індексує), через постійну вербальну формулу «пансіонат «Срібний вік»» у кожному відео і через фірмовий візуал. Повернутися до питання можна через 6 місяців, коли бренд почнуть шукати за назвою.</p>
+  </div>
+</div></section>
+
+<!-- ============ COMPETITORS ============ -->
+<section id="comp"><div class="wrap">
+  <span class="num">03</span>
+  <h2>Конкурентний аналіз</h2>
+  <p class="sub">Росія і Білорусь виключені. Кількість сторіс на момент аналізу не фіксувалась — вона не видна в архіві; рекомендації щодо сторіс подані окремо.</p>
+
+  <div class="scroll">
+  <table class="tbl">
+    <tr><th>Профіль</th><th>Країна</th><th>Підписники</th><th>Публікації</th><th>Перегляди рілс</th><th>Частота</th><th>Сильна сторона</th></tr>
+    <tr><td><b>Срібний вік</b> (наш)</td><td>UA</td><td>28,4K</td><td>1 440</td><td>300–930</td><td>~3/міс</td><td>База, пошук</td></tr>
+    <tr><td><b>Серебряный век</b> (референс)</td><td>KZ, Алмати</td><td>17,6K ✓</td><td>316</td><td>1,6K–91K</td><td>2–3 рілс/тиж</td><td>Кейси деменції, експерт</td></tr>
+    <tr><td><b>Центр заботы</b></td><td>KZ, Алмати</td><td>1,8K</td><td>108</td><td>—</td><td>нерегулярно</td><td>Хайлайтси-воронка</td></tr>
+    <tr><td><b>100-ліття</b></td><td>UA, Львів/Київ</td><td>637</td><td>371</td><td>—</td><td>регулярно</td><td>Найсильніший бренд-дизайн в UA</td></tr>
+    <tr><td><b>Турбота</b> (мережа)</td><td>UA</td><td>898</td><td>146</td><td>240–915</td><td>регулярно</td><td>Українські гачки: діти за кордоном, енергонезалежність</td></tr>
+    <tr><td><b>Родичі</b></td><td>UA, Київ</td><td>1,1K</td><td>73</td><td>—</td><td>рідко</td><td>Теплі каруселі</td></tr>
+    <tr><td><b>Нове життя</b></td><td>UA, Київ</td><td>174</td><td>675</td><td>—</td><td>часто</td><td>Антиприклад</td></tr>
+    <tr><td><b>The Fountains / St. Paul's / Southminster / Brightview</b></td><td>США</td><td>20K–227K (TikTok)</td><td>—</td><td>до 6–7 млн</td><td>щотижня і частіше</td><td>Мешканці як герої, тренди</td></tr>
+  </table>
+  </div>
+
+  <!-- Almaty -->
+  <div class="comp">
+    <div class="comp-head">
+      <div><h3>Серебряный век, Алмати — @sv_pansionat_almaty</h3><span class="tag">референс власників</span><span class="tag">верифікований</span></div>
+      <div class="kpis"><div><b>17,6K</b><br>підписників</div><div><b>316</b><br>публікацій</div><div><b>2–3</b><br>рілс на тиждень</div></div>
+    </div>
+    <p><b>Біо:</b> міжнародна мережа · медична ліцензія · догляд 24/7 · адреса · WhatsApp + ще 5 посилань.<br>
+    <b>Хайлайтси:</b> Дозвілля · Відгуки · Лайфхаки · Послуги · Адреса · Інтер'єр · Здоров'я (+ далі). Обкладинки — текст на кольоровому фоні (бузковий, синій, персиковий).<br>
+    <b>Візуал стрічки:</b> єдиний шаблон обкладинок — велика жирна плашка-заголовок на фото, палітра блакитний/бузковий/синій. Стрічка впізнається з першого погляду.</p>
+
+    <h4 style="margin-top:18px">Перегляди за темами (рілс з профілю)</h4>
+    <div style="max-width:820px">
+      <div class="bar"><span class="l">Експерт: «Якщо вам більше 60» (3 вправи)</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="v">91,4K</span></div>
+      <div class="bar"><span class="l">«Вправи від деменції»</span><div class="track"><div class="fill" style="width:57%"></div></div><span class="v">52,4K</span></div>
+      <div class="bar"><span class="l">«Бабуся знову стала мамою» (деменція)</span><div class="track"><div class="fill" style="width:48%"></div></div><span class="v">44,1K</span></div>
+      <div class="bar"><span class="l">«Помилки в догляді за людьми з деменцією»</span><div class="track"><div class="fill" style="width:45%"></div></div><span class="v">41,4K</span></div>
+      <div class="bar"><span class="l">«Бабуся перестала говорити»</span><div class="track"><div class="fill" style="width:20%"></div></div><span class="v">18,5K</span></div>
+      <div class="bar"><span class="l">«Вправи для мозку» (Альцгеймер)</span><div class="track"><div class="fill" style="width:19%"></div></div><span class="v">17,1K</span></div>
+      <div class="bar"><span class="l">«У мами почались галюцинації»</span><div class="track"><div class="fill" style="width:16%"></div></div><span class="v">14,4K</span></div>
+      <div class="bar"><span class="l">Деменція Брюса Вілліса (інфопривід)</span><div class="track"><div class="fill" style="width:11%"></div></div><span class="v">10,2K</span></div>
+      <div class="bar"><span class="l">«Бабуся кусає ковдру»</span><div class="track"><div class="fill" style="width:8%"></div></div><span class="v">7,2K</span></div>
+      <div class="bar"><span class="l">«Дідусь залишив чайник» (безпека вдома)</span><div class="track"><div class="fill" style="width:5%"></div></div><span class="v">4,9K</span></div>
+      <div class="bar"><span class="l">«Догляд за пролежнями»</span><div class="track"><div class="fill" style="width:5%"></div></div><span class="v">4,6K</span></div>
+      <div class="bar"><span class="l">Барбекю в саду / День людей похилого віку</span><div class="track"><div class="fill" style="width:3%"></div></div><span class="v">1,6–2,6K</span></div>
+      <div class="bar"><span class="l">Затишний вечір біля вогнища / День творчості</span><div class="track"><div class="fill" style="width:2%"></div></div><span class="v">1,8–2K</span></div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pc p"><h4>Взяти</h4><ul>
+        <li>Рубрику «симптом → пояснення → що робити» про деменцію і поведінку літніх людей.</li>
+        <li>Експерта в кадрі з корисною порадою і закликом «збережіть і покажіть батькам» (91K, 2,5K лайків, 72 репости).</li>
+        <li>Єдиний шаблон обкладинок і плашок-рубрик («деменція», «лайфхак», «дозвілля»).</li>
+        <li>Інфоприводи (новини, знаменитості з діагнозом) як гачок для охоплення.</li>
+      </ul></div>
+      <div class="pc c"><h4>Не повторювати</h4><ul>
+        <li>Чужі відео насильства над літньою людиною з плашкою «ЖЕСТЬ» — отримали 92 коментарі, але частину з них — про те, що пансіонат робить рекламу на трагедії. Для нас це пряма репутаційна загроза.</li>
+        <li>Невідповідність: «вам більше 60» — а в кадрі 85-річні. Аудиторія це помітила в коментарях.</li>
+        <li>Обличчя, закриті емодзі-серцем, — виглядає дешево. Краще не знімати людину, ніж ховати.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- 100-littia -->
+  <div class="comp">
+    <div class="comp-head">
+      <div><h3>100-ліття, Львів / Київ — @pansionatstolittya</h3><span class="tag">мережа</span></div>
+      <div class="kpis"><div><b>637</b><br>підписників</div><div><b>371</b><br>публікацій</div></div>
+    </div>
+    <p><b>Біо:</b> будинок для літніх людей (Львів/Київ) · реабілітація, лікування, проживання · медична допомога · трансфер до пансіонату.<br>
+    <b>Хайлайтси (найкращі в Україні):</b> Київ · Львів · Прайс · Послуги · Транспортування · Контакти · Перебування — однакові іконки-лінії на бірюзово-синьому колі.<br>
+    <b>Стрічка:</b> «Наші локації», портрет «Пан Святослав — мешканець пансіонату», «Вітаємо пані Людмилу зі 100-літтям», «Команда 100-ліття у Празі — переймаємо європейський досвід», Forbes Next 250, «Рожевий жовтень», огляд кімнат у новому корпусі.</p>
+    <div class="pros-cons">
+      <div class="pc p"><h4>Взяти</h4><ul>
+        <li>Портрети мешканців з ім'ям і шанобливим «пан/пані» — гідність замість жалю.</li>
+        <li>Іміджеві інфоприводи: навчання за кордоном, рейтинги, соціальні акції.</li>
+        <li>Хайлайт «Прайс» і «Транспортування» — прямо закриває питання покупця.</li>
+      </ul></div>
+      <div class="pc c"><h4>Слабко</h4><ul>
+        <li>Мала база і слабке охоплення — гарна упаковка без дистрибуції.</li>
+        <li>Мало «живого» відео, багато статичного дизайну.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- Turbota -->
+  <div class="comp">
+    <div class="comp-head">
+      <div><h3>Турбота — мережа пансіонатів поважного віку — @tyrbota.ua</h3></div>
+      <div class="kpis"><div><b>898</b><br>підписників</div><div><b>146</b><br>публікацій</div><div><b>240–915</b><br>переглядів</div></div>
+    </div>
+    <p><b>Хайлайтси:</b> Пансіонати · Послуги · Персонал · Контакти · Відгуки.<br>
+    <b>Теми, які точно попадають у ЦА:</b> «Українці за кордоном», «Піклуємось про ваших рідних, поки ви за кордоном», «Ви на роботі! А думками — з батьками», «Енергонезалежність у пансіонаті», «Безсонні ночі? Турбота з вашим рідним 24/7», «Межа: коли сил доглядати більше немає», «Ви теж важливі» (про вигорання того, хто доглядає).</p>
+    <div class="pros-cons">
+      <div class="pc p"><h4>Взяти</h4><ul>
+        <li>Найкращі в Україні формулювання болю дорослих дітей. Саме ці смисли треба робити сильніше й краще.</li>
+        <li>Тему енергонезалежності й безпеки під час війни.</li>
+      </ul></div>
+      <div class="pc c"><h4>Слабко</h4><ul>
+        <li>Майже всі рілси — одна й та сама керівниця на камеру з однаковою позою. Повторюваність вбиває охоплення.</li>
+        <li>Перевантажені обкладинки, мікс шрифтів і кольорів.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- Others -->
+  <div class="grid g3">
+    <div class="comp" style="margin:0">
+      <h3>Родичі, Київ</h3>
+      <div class="kpis" style="margin-bottom:10px"><div><b>1,1K</b> підп.</div><div><b>73</b> публ.</div></div>
+      <p style="font-size:14px">Каруселі в бежево-оливковій гамі: «Безпека й комфорт», «Спокій для всієї родини», «Час разом — це час, наповнений теплом», ігри та заняття. Хайлайтсів немає.</p>
+      <p style="font-size:14px"><span class="tag green">взяти</span> теплу палітру і формат «5 причин» у каруселях.</p>
+    </div>
+    <div class="comp" style="margin:0">
+      <h3>Нове життя, Київ</h3>
+      <div class="kpis" style="margin-bottom:10px"><div><b>174</b> підп.</div><div><b>675</b> публ.</div></div>
+      <p style="font-size:14px">Рілси з чорними плашками «Пансіонати Нове життя», номер телефону на обкладинці, шаблонний текст. Хайлайтси: Київ · Відгуки · Бровари · Бобриця · Умови.</p>
+      <p style="font-size:14px"><span class="tag red">антиприклад</span> 675 публікацій без системи = 174 підписники. Кількість без якості не працює.</p>
+    </div>
+    <div class="comp" style="margin:0">
+      <h3>Центр заботы, Алмати</h3>
+      <div class="kpis" style="margin-bottom:10px"><div><b>1,8K</b> підп.</div><div><b>108</b> публ.</div></div>
+      <p style="font-size:14px">Хайлайтси-воронка: Турбота · Чому ми? · Харчування · Про нас · Локація · Для кого? Але: масфоловінг (2 000 підписок) і каруселі зі списками ліків.</p>
+      <p style="font-size:14px"><span class="tag green">взяти</span> хайлайт «Для кого» <span class="tag red">не робити</span> поради щодо ліків</p>
+    </div>
+  </div>
+
+  <!-- USA -->
+  <h3 style="margin-top:36px">США та Канада: як пансіонати стають відомими</h3>
+  <div class="grid g2">
+    <div class="card">
+      <ul style="font-size:15px">
+        <li><b>The Fountains (Айова)</b> — понад 75 тис. підписників у TikTok і окремі відео до 6 млн переглядів. Найпопулярніше — питання-відповіді з мешканцями про те, чого вони не хочуть бачити на святковому столі. Співробітники кажуть, що родини щотижня підходять: «Я бачила маму у вашому відео».</li>
+        <li><b>The Ridgewood at St. Paul's (Пенсильванія)</b> — понад 200 тис. підписників і 12 млн лайків. Раз на місяць мешканці самі обирають тренди й підписи до відео.</li>
+        <li><b>Southminster (Шарлотт)</b> — відео з конкурсу костюмів на Гелловін зібрало понад 7 млн переглядів у TikTok; заклад найняв штатного контент-мейкера.</li>
+        <li><b>Brightview (Меріленд)</b> — віральні відео з мешканцями з деменцією; родини, які не можуть щодня бути поруч, бачать, що батькам добре.</li>
+      </ul>
+    </div>
+    <div class="card tint">
+      <h4>Що з цього переносимо в Україну</h4>
+      <ul>
+        <li>Мешканці — герої, а не «об'єкти догляду». Їхній гумор, думки, життєвий досвід.</li>
+        <li>Тренди, адаптовані під літніх людей, — ефективний спосіб охоплення серед 25–45.</li>
+        <li>Відео з мешканцями — це одночасно і маркетинг, і звіт для родин.</li>
+        <li>Штатний контент-мейкер на місці — ключ до регулярності.</li>
+      </ul>
+      <p style="font-size:14px;margin:0"><b>Адаптація:</b> українська аудиторія консервативніша. Танцювальні тренди — дозовано і тільки з тими, кому це справді в радість. Основа — тепло, гідність, гумор, а не клоунада.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ WHAT WORKS ============ -->
+<section id="works"><div class="wrap">
+  <span class="num">04</span>
+  <h2>Що заходить у ніші: зведення</h2>
+  <div class="scroll">
+  <table class="tbl">
+    <tr><th>Тип контенту</th><th>Охоплення</th><th>Довіра / продаж</th><th>Висновок</th></tr>
+    <tr><td><b>Впізнавана ситуація</b> («у мами почалися галюцинації», «тато перестав мити посуд»)</td><td>★★★★★</td><td>★★★★</td><td>Головний двигун охоплення. Говорить мовою дорослої дитини.</td></tr>
+    <tr><td><b>Експерт з користю</b> (лікар, реабілітолог, геріатр)</td><td>★★★★★</td><td>★★★★</td><td>Збереження і репости. Заклик «покажіть батькам».</td></tr>
+    <tr><td><b>Інфопривід</b> (знаменитість з діагнозом, новина)</td><td>★★★★</td><td>★★</td><td>Охоплення, але обережно з трагедіями.</td></tr>
+    <tr><td><b>Прозорість</b> (кухня, ніч у пансіонаті, як заселяємо, ціни)</td><td>★★★</td><td>★★★★★</td><td>Закриває страхи. Конвертує в екскурсію.</td></tr>
+    <tr><td><b>Історії мешканців і персоналу</b></td><td>★★★</td><td>★★★★★</td><td>Будує емоційний зв'язок і бренд.</td></tr>
+    <tr><td><b>Тренди з мешканцями</b></td><td>★★★★ (при влучанні — віральність)</td><td>★★★</td><td>Розриває стереотип «будинку престарілих».</td></tr>
+    <tr><td><b>Свята і дозвілля</b> (концерт, барбекю)</td><td>★★</td><td>★★★</td><td>Потрібно, але як підтвердження, а не основа. Краще в сторіс.</td></tr>
+    <tr><td><b>Загальні поради про здоров'я, народна медицина</b></td><td>★</td><td>★</td><td>Залучає нецільову аудиторію. Прибрати.</td></tr>
+    <tr><td><b>Реклама «звоніть, у нас є місця»</b></td><td>★</td><td>★★</td><td>Тільки в сторіс і як кінцівка, не як окремий пост.</td></tr>
+  </table>
+  </div>
+  <div class="callout">
+    <p><b>Формула ролика, який заходить:</b> ситуація з життя дорослої дитини в перших 2 секундах → пояснення, чому так відбувається → що з цим робити → м'який міст «у пансіонаті «Срібний вік» ми робимо так» → заклик зберегти / надіслати братові чи сестрі.</p>
+  </div>
+</div></section>
+
+<!-- ============ VOICE ============ -->
+<section id="voice"><div class="wrap">
+  <span class="num">05</span>
+  <h2>Голос аудиторії: коментарі, страхи, питання</h2>
+  <p class="sub">Зібрано з коментарів під рілсами конкурентів і з тем, на які пансіонати вже відповідають у своїх серіях питань-відповідей.</p>
+
+  <div class="grid g2">
+    <div class="card cream">
+      <h3>Що пишуть у коментарях (суть)</h3>
+      <ul style="font-size:15px">
+        <li><b>Тотальна недовіра:</b> «нікому не довіряйте рідних», «я вже нікому не вірю — або б'ють, або ображають».</li>
+        <li><b>Конкретні страхи:</b> «у пансіонатах роблять укол, щоб лежала спокійно» — один з найпопулярніших коментарів.</li>
+        <li><b>Вимога контролю:</b> «а у вас у кожній кімнаті будуть камери для родичів?»</li>
+        <li><b>Провина і опір:</b> «краще накричу на рідного, але в пансіонат не здам».</li>
+        <li><b>Біль доглядальника:</b> історії, як мама плакала, жаліючи доньку, яка доглядала її роками.</li>
+        <li><b>Розуміння деменції:</b> «бабуся не винна, це хвороба» — люди шукають пояснень.</li>
+        <li><b>Підозра в маніпуляції:</b> «ви на трагедії робите рекламу».</li>
+        <li><b>Уважність до деталей:</b> «показуєте 90-річних, а говорите про 60-річних», «скільки разів робити вправу?».</li>
+      </ul>
+    </div>
+    <div class="card tint">
+      <h3>Топ-20 питань до пансіонату</h3>
+      <ol style="font-size:15px">
+        <li>Скільки коштує і що входить у ціну?</li>
+        <li>Чи можна приїжджати в будь-який час?</li>
+        <li>Чи можна бачити маму онлайн / чи є камери?</li>
+        <li>Хто доглядає: скільки персоналу на мешканця, яка кваліфікація?</li>
+        <li>Чи є лікар і медсестра цілодобово?</li>
+        <li>Чи берете лежачих і людей з деменцією?</li>
+        <li>Чим годуєте? Чи враховуєте діабет, дієти?</li>
+        <li>Які документи потрібні для заселення?</li>
+        <li>Чи можна на тиждень-місяць (тимчасово)?</li>
+        <li>Що з укриттям, світлом, тривогами?</li>
+        <li>Чим мама займатиметься цілий день?</li>
+        <li>Як умовити батьків переїхати?</li>
+        <li>Як ви перевозите людину до пансіонату?</li>
+        <li>Що буде, якщо стане гірше / потрібна лікарня?</li>
+        <li>Які речі брати з собою?</li>
+        <li>Чи можна гуляти, виходити на вулицю?</li>
+        <li>Чи заклад офіційний, чи є в реєстрі надавачів соцпослуг?</li>
+        <li>Чи окрема кімната, скільки людей у кімнаті?</li>
+        <li>Як ви реагуєте, якщо мама не хоче їсти, плаче, хоче додому?</li>
+        <li>Чи заспокоюєте препаратами?</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <p><b>Кожне питання = окремий рілс + слайд у хайлайтсі + відповідь шаблоном у Direct.</b> 20 питань — це 20 готових роликів для рубрики «Чесно про пансіонат». Питання 3, 19 і 20 — найсильніші: на них ніхто з конкурентів відкрито не відповідає.</p>
+  </div>
+</div></section>
+
+<!-- ============ POSITIONING ============ -->
+<section id="position"><div class="wrap">
+  <span class="num">06</span>
+  <h2>Позиціонування</h2>
+
+  <div class="card tint" style="margin-bottom:24px">
+    <h4>Формула</h4>
+    <p style="font-size:19px;margin:0">Для дорослих дітей, які більше не можуть самі забезпечити батькам безпечний догляд, <b>«Срібний вік»</b> — це мережа пансіонатів, де батькам добре щодня, а родина бачить це на власні очі. На відміну від закритих «будинків престарілих», ми <b>показуємо все</b>: як ми годуємо, як доглядаємо вночі, що робимо, коли мама сумує.</p>
+  </div>
+
+  <div class="grid g3">
+    <div class="card">
+      <h4>Опора 1 · Прозорість</h4>
+      <p style="font-size:14px">Показуємо те, що інші ховають: ніч, кухню, медичний пост, процес заселення, ціни. Відповідаємо на незручні питання першими.</p>
+    </div>
+    <div class="card">
+      <h4>Опора 2 · Гідність</h4>
+      <p style="font-size:14px">Мешканці — «пан Іван», «пані Ніна», з біографією і характером. Не «бабусі», не «лежачі».</p>
+    </div>
+    <div class="card">
+      <h4>Опора 3 · Спокій для родини</h4>
+      <p style="font-size:14px">Звіти, відеозв'язок, генератори, укриття, медсестра 24/7. Ми знімаємо з дорослої дитини не любов, а нічну тривогу.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:36px">Варіанти слогану</h3>
+  <div class="grid g3">
+    <div class="card cream"><b>«Спокій для батьків. Спокій для вас.»</b><br><small>Основний. Закриває обидві сторони рішення.</small></div>
+    <div class="card cream"><b>«Ми поруч, коли ви далеко»</b><br><small>Для тих, хто за кордоном або в іншому місті.</small></div>
+    <div class="card cream"><b>«Тут живуть, а не доживають»</b><br><small>Проти стигми. Для рілс-маніфесту.</small></div>
+  </div>
+
+  <h3 style="margin-top:36px">Як зробити, щоб «Срібний вік» = пансіонат</h3>
+  <div class="grid g2">
+    <div class="card">
+      <ul>
+        <li><b>Вербальний якір:</b> кожен рілс з людиною в кадрі починається або закінчується фразою «Пансіонат «Срібний вік»». Однаково, завжди.</li>
+        <li><b>Візуальний якір:</b> монограма в одному й тому самому куті кожного відео + фірмова плашка рубрики.</li>
+        <li><b>Звуковий якір:</b> один короткий фірмовий звук / мелодія на 2 секунди в кінці кожного рілс.</li>
+        <li><b>Обличчя бренду:</b> 2–3 постійних героя — директор, старша медсестра, адміністратор. Їх мають впізнавати.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <ul>
+        <li><b>Власний хештег:</b> #срібнийвік у кожному пості + геотег конкретного пансіонату.</li>
+        <li><b>Мережевий масштаб:</b> «Київ · Одеса · Вінниця · Чернівці · Проців» — в біо, на обкладинках, у підписах. Мережа = надійність.</li>
+        <li><b>Ключові слова в підписах</b> для пошуку Instagram: «пансіонат Київ», «догляд за літніми людьми», «пансіонат для людей з деменцією».</li>
+        <li><b>Threads:</b> акаунт уже є — дублювати туди текстові тези й відповіді на питання.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:36px">Можливості розвитку профілю</h3>
+  <div class="grid g4">
+    <div class="card"><h4>Нова ЦА</h4><p style="font-size:14px">Перезапуск на дорослих дітей: усі рубрики говорять до них, а не до літніх людей.</p></div>
+    <div class="card"><h4>Українці за кордоном</h4><p style="font-size:14px">Окремий напрям: онлайн-екскурсії, відеозвіти, оплата з-за кордону, таргет на Польщу і Німеччину.</p></div>
+    <div class="card"><h4>Тимчасове проживання</h4><p style="font-size:14px">«Залиште маму на 2 тижні, поки ви у відпустці / після лікарні» — найлегший вхід у послугу.</p></div>
+    <div class="card"><h4>Деменція</h4><p style="font-size:14px">Стати головним українськомовним голосом про деменцію в Instagram — тема з найбільшим охопленням.</p></div>
+  </div>
+</div></section>
+
+<!-- ============ VISUAL ============ -->
+<section id="visual"><div class="wrap">
+  <span class="num">07</span>
+  <h2>Візуал і кольорокорекція</h2>
+
+  <h3>Палітра на основі логотипу</h3>
+  <div class="swatches" style="margin-bottom:32px">
+    <div class="sw"><div class="c" style="background:#2C4A78"></div><div class="t"><b>Темно-синій</b>#2C4A78 · плашки, заголовки</div></div>
+    <div class="sw"><div class="c" style="background:#14213D"></div><div class="t"><b>Синьо-чорний</b>#14213D · текст</div></div>
+    <div class="sw"><div class="c" style="background:#B9C3D0"></div><div class="t"><b>Срібний</b>#B9C3D0 · обводки, акценти, «срібний» вік</div></div>
+    <div class="sw"><div class="c" style="background:#E8F0F9"></div><div class="t"><b>Небесний</b>#E8F0F9 · фони каруселей</div></div>
+    <div class="sw"><div class="c" style="background:#F7F2EA"></div><div class="t"><b>Теплий кремовий</b>#F7F2EA · «домашній» акцент</div></div>
+  </div>
+  <p>Чому кремовий: лише синій і білий виглядають холодно і «по-лікарняному». Теплий кремовий додає дому — і тримає баланс із фото людей, де шкіра і дерево дають теплі тони.</p>
+
+  <div class="mock-wrap" style="margin-top:32px">
+    <div class="phone">
+      <div class="ph-top">
+        <div class="ava"><img src="data:image/png;base64,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" alt="Срібний вік" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+        <div class="ph-stats"><div><b>1 440</b>дописів</div><div><b>28,4K</b>читачів</div><div><b>9</b>стежить</div></div>
+      </div>
+      <div class="ph-name">Срібний вік · пансіонат для літніх людей</div>
+      <div class="ph-bio">Спокій для батьків. Спокій для вас.<br>🩺 Медсестра 24/7 · деменція · реабілітація<br>⚡️ Генератори та укриття<br>📍 Київ · Одеса · Вінниця · Чернівці · Проців<br>👇 Запишіться на екскурсію</div>
+      <div class="ph-btn"><div>Записатися</div><div class="g">Написати</div></div>
+      <div class="hl">
+        <div class="h"><i>₴</i>Ціни</div>
+        <div class="h"><i>⌂</i>Пансіонати</div>
+        <div class="h"><i>✚</i>Догляд</div>
+        <div class="h"><i>☺</i>Відгуки</div>
+        <div class="h"><i>?</i>Питання</div>
+        <div class="h"><i>✎</i>Заселення</div>
+      </div>
+      <div class="feed">
+        <div class="f1">Мама почала ховати речі</div>
+        <div class="f2">Скільки коштує пансіонат</div>
+        <div class="f3">Пані Ніна, 89</div>
+        <div class="f4">Ніч у пансіонаті</div>
+        <div class="f5">Деменція: 5 перших ознак</div>
+        <div class="f6">Пов: ви за кордоном</div>
+      </div>
+    </div>
+    <div>
+      <h3>Як виглядає стрічка</h3>
+      <ul>
+        <li><b>Обкладинки рілс:</b> живе фото (людина, руки, деталь) + велика плашка заголовка в нижній третині. 3–6 слів. Шрифт — Montserrat SemiBold, одне ключове слово курсивом або іншим кольором.</li>
+        <li><b>Мітка рубрики</b> над заголовком: маленька заокруглена плашка «деменція», «чесно», «історія», «порада лікаря». Глядач вчиться впізнавати рубрики.</li>
+        <li><b>Ритм сітки:</b> чергуємо темно-синю плашку → кремову → фото без плашки. Ніколи три однакові підряд.</li>
+        <li><b>Каруселі:</b> небесний фон, синій текст, перший слайд — питання, останній — заклик. 5–8 слайдів.</li>
+        <li><b>Монограма</b> — завжди в одному місці (правий верхній кут), прозорість 80%.</li>
+        <li><b>Субтитри</b> на всіх рілс: білий текст з тонким темно-синім контуром, без яскравих жовтих виділень. Більшість дивиться без звуку.</li>
+      </ul>
+      <div class="callout warn" style="margin-top:12px"><p><b>Заборонено:</b> стокові фото усміхнених бабусь, банківські шаблони Canva, чорні плашки з номером телефону, червоні «ЖЕСТЬ»-заголовки, обличчя під емодзі.</p></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:40px">Кольорокорекція</h3>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Настрій: «теплий ранок у затишному домі»</h4>
+      <ul style="font-size:15px">
+        <li><b>Баланс білого:</b> трохи тепліше нейтралі (≈5200–5600K). Ніякого синюватого лікарняного світла.</li>
+        <li><b>Експозиція:</b> світла, повітряна. Тіні підняті, глибокого чорного немає — літні обличчя в жорстких тінях виглядають сумно.</li>
+        <li><b>Контраст:</b> м'який (−10…−15). Кліпінгу на білих стінах немає.</li>
+        <li><b>Шкіра:</b> тепла, без почервоніння. Помаранчевий канал: насиченість −5, яскравість +5.</li>
+        <li><b>Зелень:</b> трохи приглушена й зсунута до оливкової (зелений відтінок +10 у бік жовтого, насиченість −15). Сад має виглядати м'яко, не «кислотно».</li>
+        <li><b>Синій:</b> зберегти насиченим лише на брендованих елементах (одяг персоналу, плашки). Небо — злегка приглушене.</li>
+        <li><b>Зерно / шарпнес:</b> мінімум. Чистий, але не «пластиковий» кадр.</li>
+      </ul>
+    </div>
+    <div class="card cream">
+      <h4>Практично на зйомці</h4>
+      <ul style="font-size:15px">
+        <li>Знімати при денному світлі біля вікон. Вимикати верхні люмінесцентні лампи — вони дають зеленуватий відтінок.</li>
+        <li>Один пресет у Lightroom / один LUT у CapCut на весь контент. Зробити його після першої зйомки і більше не міняти.</li>
+        <li>Кімнати знімати з ширококутним об'єктивом з рівня очей дорослої людини, з прибраними тумбочками і без ліків у кадрі.</li>
+        <li>Попросити персонал на зйомкові дні бути у фірмовій формі (бажано синій/небесний) — так бренд «вшивається» в кадр.</li>
+        <li>Теплі деталі в кадрі: плед, чашка, квіти, фото родини на тумбочці, книжка. Це «дім», а не «палата».</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ RUBRICS ============ -->
+<section id="rubrics"><div class="wrap">
+  <span class="num">08</span>
+  <h2>Рубрикатор</h2>
+  <p class="sub">9 рубрик, кожна закриває свою задачу воронки. Частота — орієнтир на тиждень.</p>
+
+  <div class="grid g2">
+    <div class="rub"><span class="freq">1–2 рілс/тиж</span>
+      <h3>1. «Коли з мамою щось не так»</h3>
+      <p><span class="tag">охоплення</span><span class="tag">деменція</span></p>
+      <p>Впізнавана поведінка літньої людини → пояснення лікаря → що робити вдома → коли потрібна допомога фахівців.</p>
+      <p class="ex"><b>Приклади:</b> «Мама ховає гроші й каже, що їх украли» · «Тато виходить з дому вночі» · «Бабуся не впізнає онуків» · «Мама перестала митися» · «Тато знову і знову питає одне й те саме».</p>
+      <p class="ex"><b>Як знімати:</b> лікар/медсестра на камеру, 30–50 сек; або озвучка поверх кадрів пансіонату (руки, сад, без облич).</p>
+    </div>
+    <div class="rub"><span class="freq">1 рілс/тиж</span>
+      <h3>2. «Чесно про пансіонат»</h3>
+      <p><span class="tag">довіра</span><span class="tag">заперечення</span></p>
+      <p>Директор або адміністратор відповідає на одне незручне питання з банку (розділ 05).</p>
+      <p class="ex"><b>Приклади:</b> «Чи даємо заспокійливе, щоб мешканці не заважали?» · «Чи можна бачити маму на камері?» · «Що робимо, коли мешканець плаче й хоче додому?» · «Скільки коштує і чому так».</p>
+      <p class="ex"><b>Як знімати:</b> розвиваємо вже наявну серію — та сама постановка, але з обкладинкою-питанням і субтитрами.</p>
+    </div>
+    <div class="rub"><span class="freq">1 рілс/тиж</span>
+      <h3>3. «Пов: ви…» (для дорослих дітей)</h3>
+      <p><span class="tag">охоплення 25–45</span><span class="tag">емоція</span></p>
+      <p>POV-ролики від імені дорослої дитини.</p>
+      <p class="ex"><b>Приклади:</b> «Пов: ти у Варшаві, а мама не бере трубку третю годину» · «Пов: ти вперше за рік виспалась» · «Пов: мама сама надіслала тобі фото з пансіонату» · «Пов: ти боялась цього дня, а мама каже "тут добре"».</p>
+      <p class="ex"><b>Як знімати:</b> текст на екрані + атмосферні кадри пансіонату + трендовий спокійний звук.</p>
+    </div>
+    <div class="rub"><span class="freq">1 пост/тиж</span>
+      <h3>4. «Пан Іван, 87»: історії мешканців</h3>
+      <p><span class="tag">бренд</span><span class="tag">гідність</span></p>
+      <p>Портрет + коротке інтерв'ю: ким працював, яке кохання було в житті, порада молодим.</p>
+      <p class="ex"><b>Питання для інтерв'ю:</b> «Що б ви сказали собі в 30?» · «Як ви познайомились з дружиною?» · «Найкращий рік вашого життя?» · «Що вас досі дратує в молоді?» (гумор).</p>
+      <p class="ex"><b>Формат:</b> рілс 30–60 сек або карусель «портрет + 4 цитати».</p>
+    </div>
+    <div class="rub"><span class="freq">1 рілс/тиж</span>
+      <h3>5. «Зсередини»: прозорість</h3>
+      <p><span class="tag">довіра</span><span class="tag">конверсія</span></p>
+      <p>Як усе влаштовано: день з життя, ніч у пансіонаті, кухня, медичний пост, генератор при відключенні, укриття під час тривоги, як готують кімнату до заселення.</p>
+      <p class="ex"><b>Приклади:</b> «Що відбувається в пансіонаті о 3-й ночі» · «Світла немає 6 годин — а в нас тепло» · «Як ми готуємо кімнату перед приїздом нового мешканця» · «Що їдять мешканці за день».</p>
+    </div>
+    <div class="rub"><span class="freq">1 карусель/тиж</span>
+      <h3>6. «Збережіть, щоб не шукати»: гайди</h3>
+      <p><span class="tag">збереження</span><span class="tag">репости</span></p>
+      <p>Практичні каруселі для дорослих дітей.</p>
+      <p class="ex"><b>Приклади:</b> «10 ознак, що мамі вже небезпечно жити самій» · «Як поговорити з батьками про переїзд: 7 фраз» · «Чек-ліст: як обрати пансіонат і що питати на екскурсії» · «Як облаштувати квартиру для людини після інсульту» · «Що взяти з собою в пансіонат».</p>
+    </div>
+    <div class="rub"><span class="freq">1 рілс/тиж</span>
+      <h3>7. «Наші люди»: персонал</h3>
+      <p><span class="tag">довіра</span><span class="tag">людяність</span></p>
+      <p>Медсестри, доглядальниці, кухар, реабілітолог. Чому прийшли в цю роботу, найзворушливіший момент, як справляються зі складними днями.</p>
+      <p class="ex"><b>Відповідає на страх:</b> «хто буде поруч з моєю мамою». Персонал з обличчям і іменем — головна відповідь на недовіру.</p>
+    </div>
+    <div class="rub"><span class="freq">1–2 рілс/міс</span>
+      <h3>8. «Тут живуть»: тренди з мешканцями</h3>
+      <p><span class="tag">віральність</span><span class="tag">стереотип</span></p>
+      <p>Адаптовані тренди: «що мешканці думають про сучасні слова», «оцінюємо модні образи», «поради 90-річних 30-річним», «смакуємо снеки, які їдять онуки».</p>
+    </div>
+    <div class="rub" style="grid-column:1/-1"><span class="freq">1 пост/тиж + сторіс</span>
+      <h3>9. «Продаж»: умови, відгуки, мережа</h3>
+      <p><span class="tag">конверсія</span></p>
+      <p>Відгуки родин на відео (найсильніший формат), огляд кімнат кожної локації, ціни і що входить, тимчасове проживання, відкриття нового пансіонату в Проціві, онлайн-екскурсія для тих, хто за кордоном. Кожен такий пост закінчується одним чітким закликом: «Напишіть «ЕКСКУРСІЯ» в Direct».</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:36px">Співвідношення форматів</h3>
+  <div style="max-width:760px">
+    <div class="bar"><span class="l">Рілс</span><div class="track"><div class="fill" style="width:65%"></div></div><span class="v">65%</span></div>
+    <div class="bar"><span class="l">Каруселі</span><div class="track"><div class="fill" style="width:30%"></div></div><span class="v">30%</span></div>
+    <div class="bar"><span class="l">Одиночні фото</span><div class="track"><div class="fill" style="width:5%"></div></div><span class="v">5%</span></div>
+  </div>
+  <p style="font-size:14px;color:var(--ink-soft)">Рілс — для охоплення нової аудиторії. Каруселі — для збережень і довіри тих, хто вже підписаний. Одиночні фото — лише для привітань і анонсів.</p>
+</div></section>
+
+<!-- ============ VOLUME ============ -->
+<section id="volume"><div class="wrap">
+  <span class="num">09</span>
+  <h2>Обсяги і контент-план</h2>
+
+  <div class="grid g4" style="margin-bottom:28px">
+    <div class="card tint"><div class="stat">4–5</div><div class="stat-l">рілс на тиждень (16–20 на місяць)</div></div>
+    <div class="card tint"><div class="stat">2</div><div class="stat-l">каруселі на тиждень (8 на місяць)</div></div>
+    <div class="card tint"><div class="stat">6–10</div><div class="stat-l">сторіс щодня</div></div>
+    <div class="card tint"><div class="stat">1</div><div class="stat-l">прямий ефір на місяць з лікарем</div></div>
+  </div>
+
+  <h3>Чи працює модель «багато контенту» для пансіонату</h3>
+  <div class="grid g2">
+    <div class="card">
+      <h4 style="color:var(--ok)">Так, і ось чому</h4>
+      <ul style="font-size:15px">
+        <li><b>Довгий цикл рішення.</b> Кожна шоста родина вирішує понад рік. Бренд має бути у стрічці весь цей час — частота тут важливіша, ніж у ніш з імпульсною покупкою.</li>
+        <li><b>Довіра будується кількістю доказів.</b> Одне гарне відео не переконає, що маму не ображають. Сотня буденних відео з тими самими людьми — переконає.</li>
+        <li><b>У ніші немає конкуренції за увагу.</b> Хто публікує щодня — той і стає назвою за замовчуванням.</li>
+        <li><b>Контент — це також звіт для родин мешканців.</b> Вони дивляться, репостять, коментують — це безкоштовне сарафанне радіо.</li>
+      </ul>
+    </div>
+    <div class="card cream">
+      <h4 style="color:var(--warn)">Але з обмеженнями</h4>
+      <ul style="font-size:15px">
+        <li><b>Обсяг без якості — антиприклад «Нового життя»:</b> 675 публікацій, 174 підписники.</li>
+        <li><b>Ротація героїв.</b> Ті самі люди в кадрі щодня швидко набридають глядачу. Потрібно багато різних героїв і кадрів-деталей.</li>
+        <li><b>Кожна одиниця має закривати конкретне питання або біль.</b> Якщо не можете сказати, кому і навіщо цей ролик, — його не публікуємо.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout"><p><b>Вердикт:</b> високий обсяг доцільний і потрібен — у сторіс щодня, у стрічці 6–7 одиниць на тиждень. Основа — документування реального життя пансіонату плюс корисний контент для дорослих дітей. Перші 4–6 тижнів можна тримати 4 одиниці на тиждень, поки збирається банк відео і налагоджується процес.</p></div>
+
+  <h3 style="margin-top:32px">Шаблон тижня</h3>
+  <div class="week">
+    <div class="day"><b>Пн</b><div class="r">Рілс · Коли з мамою щось не так</div><div class="s">Сторіс · план тижня</div></div>
+    <div class="day"><b>Вт</b><div class="r">Карусель · Гайд</div><div class="s">Сторіс · меню дня</div></div>
+    <div class="day"><b>Ср</b><div class="r">Рілс · Чесно про пансіонат</div><div class="s">Сторіс · опитування</div></div>
+    <div class="day"><b>Чт</b><div class="r">Рілс · Пов / Наші люди</div><div class="s">Сторіс · заняття</div></div>
+    <div class="day"><b>Пт</b><div class="r">Карусель · Історія мешканця</div><div class="s">Сторіс · відповіді на питання</div></div>
+    <div class="day"><b>Сб</b><div class="r">Рілс · Зсередини / тренд</div><div class="s">Сторіс · візити родин</div></div>
+    <div class="day"><b>Нд</b><div class="r">Пост · Продаж / відгук</div><div class="s">Сторіс · тиждень у кадрах</div></div>
+  </div>
+</div></section>
+
+<!-- ============ STORIES ============ -->
+<section id="stories"><div class="wrap">
+  <span class="num">10</span>
+  <h2>Сторіс</h2>
+  <p class="sub">Сторіс бачать ті, хто вже підписаний, — тобто люди на етапі обдумування. Тут продаж і довіра, а не охоплення.</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>Щоденна структура (6–10 кадрів)</h3>
+      <ol style="font-size:15px">
+        <li><b>Ранок:</b> сніданок / погода / «доброго ранку з …» — 1–2 кадри.</li>
+        <li><b>День:</b> заняття, реабілітація, прогулянка — 2–3 кадри.</li>
+        <li><b>Розмовний сторіс:</b> адміністратор або медсестра 15–30 сек про щось одне — 1–2 кадри.</li>
+        <li><b>Інтерактив:</b> опитування / тест / «задайте питання» — 1 кадр.</li>
+        <li><b>Продаж:</b> одна м'яка згадка — вільні місця, екскурсія, ціна — 1 кадр.</li>
+      </ol>
+    </div>
+    <div class="card tint">
+      <h3>Банк тем для сторіс</h3>
+      <ul style="font-size:15px">
+        <li>Меню дня з фото страв</li>
+        <li>«Хто сьогодні чергує» — обличчя зміни</li>
+        <li>Дні народження мешканців</li>
+        <li>Відключення світла: «у нас працює генератор»</li>
+        <li>Тривога: «всі в укритті за 4 хвилини» (без облич)</li>
+        <li>Родини приїхали в гості</li>
+        <li>Відповіді на питання з Direct</li>
+        <li>Тест «Чи час думати про догляд для батьків?»</li>
+        <li>Опитування «Хто з вас доглядає батьків сам?»</li>
+        <li>Репости відгуків і згадок родин</li>
+        <li>До/після кімнати, нові меблі, сад по сезонах</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px">Ідея «20 розмовних відео на 2 тижні»: оцінка</h3>
+  <div class="grid g2">
+    <div class="pc p"><h4>Працює для</h4><ul>
+      <li>Розмовних блоків з експертами: директор, лікар, медсестра — їхній час дефіцитний, пакетна зйомка це вирішує.</li>
+      <li>Відповідей на питання (банк із 20 питань = 20 сторіс).</li>
+      <li>Регулярності: навіть якщо на локації нічого не відбувається, сторіс виходить.</li>
+    </ul></div>
+    <div class="pc c"><h4>Ризики</h4><ul>
+      <li>Сторіс — це «зараз». Однаковий одяг, освітлення й погода 14 днів поспіль видають запис, і ефект «живого» зникає.</li>
+      <li>Записане відео не відреагує на події: тривогу, відключення, свято, перший сніг.</li>
+    </ul></div>
+  </div>
+  <div class="callout"><p><b>Рекомендація — гібрид.</b> Пакетно записуємо 15–20 розмовних відео (зміна одягу кожні 3–4 відео, різні локації, без прив'язки до погоди й дат). Плюс адміністратор на кожній локації щодня знімає на телефон 3–5 «живих» кадрів (сніданок, заняття, сад) за коротким чек-листом і надсилає в спільний чат. Розмовне відео + живі кадри щодня = відчуття «прямого ефіру» без щоденних виїздів.</p></div>
+</div></section>
+
+<!-- ============ HIGHLIGHTS ============ -->
+<section id="highlights"><div class="wrap">
+  <span class="num">11</span>
+  <h2>Хайлайтси</h2>
+
+  <div class="grid g2">
+    <div class="card cream">
+      <h3>Прибрати</h3>
+      <p><span class="tag red">Корисно 2</span><span class="tag red">Вправи</span><span class="tag red">Народне лікування</span><span class="tag red">Корисно</span><span class="tag red">Організм</span><span class="tag red">Лік трави</span></p>
+      <p style="font-size:15px">Жоден не відповідає на питання покупця. «Народне лікування» і «Лік трави» в профілі закладу з медичним доглядом — репутаційний ризик. Архівувати повністю.</p>
+    </div>
+    <div class="card tint">
+      <h3>Стиль обкладинок</h3>
+      <p style="font-size:15px">Тонка лінійна іконка темно-синього кольору (#2C4A78) на небесному фоні (#E8F0F9) з тонкою срібною обводкою. Однаковий стиль для всіх. Підписи — одне слово.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:28px">Новий набір — 8 хайлайтсів у порядку воронки</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <tr><th>#</th><th>Назва</th><th>Що всередині</th></tr>
+    <tr><td>1</td><td><b>Ціни</b></td><td>Вартість по локаціях «від…», що входить, що оплачується окремо, тимчасове проживання, як оплатити з-за кордону.</td></tr>
+    <tr><td>2</td><td><b>Пансіонати</b></td><td>По 2–3 кадри на кожну локацію: Київ, Одеса, Вінниця, Чернівці, Проців — фасад, територія, кімната, адреса, геотег.</td></tr>
+    <tr><td>3</td><td><b>Догляд</b></td><td>Медсестра 24/7, лікар, реабілітація, деменція, лежачі, харчування, ліки за призначенням.</td></tr>
+    <tr><td>4</td><td><b>Безпека</b></td><td>Генератори, укриття, протокол тривоги, камери в загальних зонах, протипожежна безпека, реєстр надавачів соцпослуг.</td></tr>
+    <tr><td>5</td><td><b>Відгуки</b></td><td>Відео-відгуки родин, скріншоти повідомлень, «мама передає привіт».</td></tr>
+    <tr><td>6</td><td><b>Команда</b></td><td>Обличчя і імена персоналу, кваліфікація, «один день медсестри».</td></tr>
+    <tr><td>7</td><td><b>Питання</b></td><td>20 найчастіших питань — по одному на кадр, з короткою відповіддю.</td></tr>
+    <tr><td>8</td><td><b>Заселення</b></td><td>Крок за кроком: дзвінок → екскурсія (наживо або онлайн) → документи → трансфер → перший тиждень адаптації. Що взяти з собою.</td></tr>
+  </table>
+  </div>
+  <p style="font-size:14px;color:var(--ink-soft)">Додатково, коли накопичиться контент: «Життя» (дозвілля, свята) — 9-й хайлайт у кінці ряду.</p>
+
+  <h3 style="margin-top:28px">Шапка профілю</h3>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Ім'я (індексується пошуком)</h4>
+      <p>Срібний вік · пансіонат для літніх людей</p>
+      <h4>Біо</h4>
+      <p style="font-size:15px">Спокій для батьків. Спокій для вас.<br>🩺 Медсестра 24/7 · деменція · реабілітація<br>⚡️ Генератори й укриття<br>📍 Київ · Одеса · Вінниця · Чернівці · Проців<br>👇 Запишіться на екскурсію</p>
+    </div>
+    <div class="card">
+      <h4>Посилання</h4>
+      <p style="font-size:15px">Мультипосилання: Viber / Telegram / WhatsApp · сайт · онлайн-екскурсія. Кнопки контакту: «Подзвонити» і «Написати».</p>
+      <h4>3 закріплені публікації</h4>
+      <ol style="font-size:15px"><li>Рілс-маніфест «Тут живуть, а не доживають» (хто ми)</li><li>Огляд пансіонату + ціни «від»</li><li>Найкращий відео-відгук родини</li></ol>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ ENGAGEMENT ============ -->
+<section id="engage"><div class="wrap">
+  <span class="num">12</span>
+  <h2>Як підняти залучення і продажі</h2>
+
+  <div class="grid g3">
+    <div class="card">
+      <h4>Залучення</h4>
+      <ul style="font-size:14px">
+        <li>Заклики, що працюють у ніші: «збережіть», «надішліть братові чи сестрі», «покажіть батькам».</li>
+        <li>Питання в кінці ролика: «А ваша мама теж так робить?» — люди охоче діляться історіями.</li>
+        <li>Відповідати на кожен коментар протягом 2 годин, у тому числі на критику — спокійно й по суті.</li>
+        <li>Відповідати на питання з коментарів окремим рілсом-відповіддю.</li>
+        <li>Щомісячний ефір з лікарем: «Деменція: питання-відповідь».</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Продажі</h4>
+      <ul style="font-size:14px">
+        <li>Кодове слово: «Напишіть ЕКСКУРСІЯ в Direct» + автовідповідь з посиланням на запис.</li>
+        <li>Шаблони відповідей у Direct на 20 типових питань — швидкість відповіді вирішує.</li>
+        <li>Онлайн-екскурсія по відеозв'язку для тих, хто за кордоном.</li>
+        <li>Тест у сторіс «Чи потрібен вашим батькам догляд?» → результат → консультація.</li>
+        <li>Лід-магніт: PDF «Чек-ліст вибору пансіонату» за підписку / в Direct.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Охоплення ззовні</h4>
+      <ul style="font-size:14px">
+        <li>Колаборації (спільні публікації) з лікарями-геріатрами, неврологами, психологами про вигорання.</li>
+        <li>Блогери 30–45, які відкрито говорять про догляд за батьками.</li>
+        <li>Таргет на дорослих 30–55 в Україні, Польщі, Німеччині, Чехії з рілсами рубрик 1 і 3.</li>
+        <li>Родини мешканців — відмічати їх, щоб контент розходився їхніми колами.</li>
+        <li>Місцеві медіа: історії мешканців, 100-річчя, відкриття в Проціві.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px">Воронка і KPI</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <tr><th>Етап</th><th>Контент</th><th>Метрика</th><th>Ціль через 3 міс.</th></tr>
+    <tr><td>Впізнаваність</td><td>Рубрики 1, 3, 8, колаборації</td><td>Перегляди рілс, нові підписники</td><td>Медіана 3–5K переглядів, хоча б 1 рілс 30K+</td></tr>
+    <tr><td>Інтерес</td><td>Рубрики 4, 6, 7</td><td>Збереження, репости</td><td>ER 1,5–3%</td></tr>
+    <tr><td>Довіра</td><td>Рубрики 2, 5, сторіс, хайлайтси</td><td>Перегляди сторіс, відповіді</td><td>Охоплення сторіс 5–8% від бази</td></tr>
+    <tr><td>Дія</td><td>Рубрика 9, кодове слово, тест</td><td>Звернення в Direct, записи на екскурсію</td><td>Відстежувати щотижня: звернення → екскурсія → заселення</td></tr>
+  </table>
+  </div>
+  <div class="callout"><p><b>Важливо:</b> попросити адміністраторів питати кожного, хто дзвонить: «Звідки ви про нас дізналися?» — і записувати. Без цього неможливо довести, що соцмережі продають.</p></div>
+</div></section>
+
+<!-- ============ SHOOT ============ -->
+<section id="shoot"><div class="wrap">
+  <span class="num">13</span>
+  <h2>Перша зйомка: що знімати</h2>
+  <p class="sub">Мета першого виїзду — зібрати банк матеріалу на 3–4 тижні публікацій і пакет для хайлайтсів. Думаємо очима 30-річної людини, яка гортає стрічку ввечері після роботи.</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>Шот-лист (B-roll)</h3>
+      <ul style="font-size:14px">
+        <li>Фасад і в'їзд: загальний план, ранкове світло</li>
+        <li>Повільний прохід територією (стабілізатор), лавки, сад, альтанка</li>
+        <li>Деталі: руки на пледі, чашка чаю, окуляри на книжці, квіти на підвіконні</li>
+        <li>Кожен тип кімнати: загальний план + деталь ліжка + вид з вікна</li>
+        <li>Кухня: приготування, подача, тарілка зверху</li>
+        <li>Їдальня під час обіду (загальний план без крупних облич)</li>
+        <li>Медичний пост, тонометр, журнал (без персональних даних)</li>
+        <li>Реабілітація: бруси, тренажери, руки інструктора</li>
+        <li>Заняття: малювання, настільні ігри, розмови</li>
+        <li>Генератор, укриття (облаштоване, з лавками, водою)</li>
+        <li>Персонал: проходи коридором, посмішки, руки, що поправляють плед</li>
+        <li>Таймлапс неба над пансіонатом, вечірнє світло у вікнах</li>
+        <li>Логотип / табличка на вході — для монтажних заставок</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Розмовні відео й інтерв'ю</h3>
+      <ul style="font-size:14px">
+        <li><b>Директор:</b> 8–10 відповідей з банку питань (рубрика 2)</li>
+        <li><b>Лікар / старша медсестра:</b> 6–8 відео про деменцію і тривожні симптоми (рубрика 1)</li>
+        <li><b>Медсестра / доглядальниця:</b> «Чому я тут працюю», «Найзворушливіший момент» (рубрика 7)</li>
+        <li><b>Кухар:</b> «Що їдять мешканці за день»</li>
+        <li><b>2–3 мешканці</b>: інтерв'ю для рубрики 4</li>
+        <li><b>Родина під час візиту</b>: відео-відгук 30–60 сек</li>
+        <li><b>Адміністратор:</b> маніфест «Тут живуть, а не доживають», огляд кімнат, ціни</li>
+        <li>Для сторіс: 15–20 коротких розмовних відео, міняти одяг/локацію кожні 3–4</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:28px">15 ідей рілс, які можна зняти вже на першому виїзді</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <tr><th>#</th><th>Гачок (перші 2 секунди)</th><th>Рубрика</th></tr>
+    <tr><td>1</td><td>«Пов: ти вперше приїхала подивитись пансіонат для мами і боїшся того, що побачиш»</td><td>Пов</td></tr>
+    <tr><td>2</td><td>«Ось як виглядає пансіонат, якщо його не соромно показати»</td><td>Зсередини</td></tr>
+    <tr><td>3</td><td>«Скільки коштує пансіонат у Києві — і за що ви платите»</td><td>Продаж</td></tr>
+    <tr><td>4</td><td>«Мама каже, що в неї вкрали гроші. Це не характер — це може бути деменція»</td><td>Коли з мамою щось не так</td></tr>
+    <tr><td>5</td><td>«Чи даємо ми заспокійливе, щоб мешканці "не заважали"? Відповідає директор»</td><td>Чесно</td></tr>
+    <tr><td>6</td><td>«Що їдять у пансіонаті за один день»</td><td>Зсередини</td></tr>
+    <tr><td>7</td><td>«Пані Ніно, що б ви сказали собі в 30 років?»</td><td>Історії</td></tr>
+    <tr><td>8</td><td>«Відключили світло. Що в цей час відбувається в пансіонаті»</td><td>Зсередини</td></tr>
+    <tr><td>9</td><td>«Пов: ти за кордоном, а мама надіслала фото з прогулянки в саду»</td><td>Пов</td></tr>
+    <tr><td>10</td><td>«5 ознак, що батькам уже небезпечно жити самим»</td><td>Коли з мамою щось не так / Гайд</td></tr>
+    <tr><td>11</td><td>«Я медсестра в пансіонаті. Ось що мене тримає в цій роботі»</td><td>Наші люди</td></tr>
+    <tr><td>12</td><td>«Мешканці пансіонату оцінюють сучасні слова: краш, вайб, рофл»</td><td>Тут живуть</td></tr>
+    <tr><td>13</td><td>«Як ми готуємо кімнату до приїзду нового мешканця»</td><td>Зсередини</td></tr>
+    <tr><td>14</td><td>«Віддати батьків у пансіонат — це зрада? Відповідає психолог / директор»</td><td>Чесно</td></tr>
+    <tr><td>15</td><td>«Перший тиждень у пансіонаті: що відчуває людина і як ми допомагаємо адаптуватись»</td><td>Чесно / Зсередини</td></tr>
+  </table>
+  </div>
+</div></section>
+
+<!-- ============ ROADMAP ============ -->
+<section id="roadmap"><div class="wrap">
+  <span class="num">14</span>
+  <h2>План на 90 днів</h2>
+  <div class="tl">
+    <div class="st">
+      <h3>Тиждень 1–2 · Перезбірка</h3>
+      <ul>
+        <li>Архівувати старі хайлайтси, оновити ім'я, біо, посилання.</li>
+        <li>Зробити шаблони: обкладинки рілс, каруселі, плашки рубрик, обкладинки хайлайтсів.</li>
+        <li>Перша зйомка (розділ 13), створити пресет кольорокорекції.</li>
+        <li>Зібрати 8 нових хайлайтсів.</li>
+        <li>Чек-лист щоденних кадрів для адміністраторів локацій.</li>
+      </ul>
+    </div>
+    <div class="st">
+      <h3>Тиждень 3–6 · Запуск</h3>
+      <ul>
+        <li>4 одиниці в стрічці на тиждень, сторіс щодня.</li>
+        <li>Тест усіх 9 рубрик — по 2–3 одиниці кожної.</li>
+        <li>Запуск кодового слова «ЕКСКУРСІЯ» і шаблонів відповідей.</li>
+        <li>Перший ефір з лікарем.</li>
+      </ul>
+    </div>
+    <div class="st">
+      <h3>Тиждень 7–10 · Масштаб</h3>
+      <ul>
+        <li>Вихід на 6–7 одиниць на тиждень.</li>
+        <li>Подвоїти рубрики-лідери за переглядами і збереженнями, прибрати слабкі.</li>
+        <li>Перші колаборації з лікарями і блогерами.</li>
+        <li>Таргет на Україну і діаспору з найкращими рілсами.</li>
+      </ul>
+    </div>
+    <div class="st">
+      <h3>Тиждень 11–13 · Аналіз</h3>
+      <ul>
+        <li>Звіт: перегляди, ER, звернення в Direct, екскурсії, заселення із соцмереж.</li>
+        <li>Оновлення рубрикатора і контент-плану на наступний квартал.</li>
+        <li>Рішення щодо зміни нікнейму і запуску TikTok.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <h3 style="color:var(--ink)">Джерела та методологія</h3>
+  <p>Профілі Instagram (@budynok_prestarilykh, @sv_pansionat_almaty, @pansionatstolittya, @tyrbota.ua, @rodichi.in.ua, @pension.kyiv, @centerzaboty) переглянуті вручну; цифри — на момент перегляду. Коментарі узагальнено й перефразовано.</p>
+  <ol>
+    <li><a href="https://www.kmu.gov.ua/news/demografichni-tendenciyi-v-ukrayini-potrebuyut-kompleksnogo-pidhodu-na-derzhavnomu-rivni">КМУ — демографічні тенденції, прогноз частки 60+</a></li>
+    <li><a href="https://news.finance.ua/ua/zvidky-naybil-she-vyihalo-ukrainciv-za-kordon-minekonomiky">Finance.ua / Мінекономіки — кількість українських біженців, квітень 2026</a></li>
+    <li><a href="https://www.kmu.gov.ua/news/minsocpolitiki-planuye-reformu-geriatrichnih-pansionativ">КМУ — реформа геріатричних пансіонатів</a></li>
+    <li><a href="https://kyivcity.gov.ua/news/vitaliy_klichko_v_kiyevi_trivayut_perevirki_privatnikh_pansionativ_dlya_lyudey_pokhilogo_viku_kriminalni_spravi_vzhe_porushili_schodo_devyati_takikh_zakladiv/">КМДА — перевірки приватних пансіонатів у Києві</a></li>
+    <li><a href="https://ombudsman.gov.ua/storage/app/media/uploaded-files/15.01.2025_%D0%97%D0%B2%D1%96%D1%82_%D0%A1%D1%80%D1%96%D0%B1%D0%BD%D0%B8%D0%B9%20%D0%92%D1%96%D0%BA.pdf">Омбудсман — звіт про відвідування пансіонату «Срібний вік» (2025)</a></li>
+    <li><a href="https://seniorhousingnews.com/2015/09/28/what-does-and-does-not-trigger-a-senior-living-move-in/">Senior Housing News / Caring.com — що спонукає до переїзду в пансіонат</a></li>
+    <li><a href="https://www.caring.com/about/news/caregiver-journey">Caring.com — Caregiver Journey</a></li>
+    <li><a href="https://www.kwqc.com/2024/06/28/local-retirement-home-gains-online-popularity-through-tiktok">KWQC — The Fountains, TikTok</a></li>
+    <li><a href="https://www.mcknightsseniorliving.com/?p=76114">McKnight's Senior Living — The Fountains</a></li>
+    <li><a href="https://www.yahoo.com/news/local-retirement-home-residents-went-182438201.html">WKBN — The Ridgewood at St. Paul's</a></li>
+    <li><a href="https://www.axios.com/local/charlotte/sponsored/meet-the-charlotte-retirement-community-winning-hearts-online">Axios — Southminster</a></li>
+    <li><a href="https://cbsnews.com/baltimore/news/senior-living-facility-residents-in-white-marsh-take-tiktok-by-storm">CBS — Brightview Senior Living</a></li>
+  </ol>
+</div></footer>
+
+</body>
+</html>
